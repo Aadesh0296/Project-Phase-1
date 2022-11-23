@@ -1,0 +1,27 @@
+@model CollegeApp.Services.CollegeDbContext
+<html>
+    <head>
+        <title>BasicWebApp</title>
+    </head>
+    <body>
+        <h1>Welcome Student</h1>
+        <table border="1">
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Age</th>
+                <th>Grade</th>
+                <th>Course ID</th>
+            </tr>
+            @foreach (var detail in ViewBag.course)
+            {
+                <tr>
+                    <td>@detail.Id</td>
+                    <td>@detail.name</td>
+                    <td>@detail.age</td>
+                    <td>@detail.grade</td>
+                    <td>@detail.CourseId</td>
+                </tr>
+            }
+        </table>
+    </body>

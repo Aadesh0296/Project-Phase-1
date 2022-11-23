@@ -1,0 +1,40 @@
+@model CollegeApp.Services.CollegeDbContext
+<html>
+
+<head>
+    <title>BasicWebApp</title>
+</head>
+
+<body>
+    <h1>Welcome Student</h1>
+    <table border="1">
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Fees</th>
+            <th>Duration</th>
+        </tr>
+        @foreach (var course in Model.Courses)
+        {
+            <tr>
+                <td>@course.Id</td>
+                <td>@course.name</td>
+                <td>@course.fees</td>
+                <td>@course.duration</td>
+                <td><a href="Student/Studentdetail/@course.Id">details</a></td>
+            </tr>
+        }
+    </table>
+    <form action="Student/Studentdetail/{id}">
+        <label for="Courses">Choose a Course:</label>
+        <select name="Courses" id="@Model.Courses">
+            <option value="@ViewBag.Id">Btech</option>
+            <option value="@ViewBag.Id">BSC</option>
+            <option value="@ViewBag.Id">BscAgri</option>
+            <option value="@ViewBag.Id">MBBS</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Get Details">
+    </form>
+</body>
+</html>
