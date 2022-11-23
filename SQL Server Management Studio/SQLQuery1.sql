@@ -1,0 +1,1 @@
+create table course(courseId varchar(10) not null primary key, name varchar (20), fees decimal, duration int);
